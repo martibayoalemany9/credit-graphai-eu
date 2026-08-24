@@ -1,165 +1,30 @@
 {
   "title": "European consumer credit registers",
-  "gdpr": "GDPR is the common data-protection floor across the EEA. It does not unify scores or bureau models. Each country still runs its own positive, negative, or mixed register.",
+  "gdpr": "GDPR is the common data-protection floor across the EEA. It does not unify scores. Private ACCIS-style bureaus and public central credit registers sit side by side; data-subject access (Art. 15) is the usual way to search your own file.",
   "countries": [
-    {
-      "id": "de",
-      "iso": "DE",
-      "country": "Germany",
-      "region": "euro",
-      "system": "SCHUFA",
-      "style": "comprehensive",
-      "styleLabel": "Comprehensive",
-      "notes": "Widely used; score important for rentals, contracts.",
-      "bureaus": [
-        {
-          "name": "SCHUFA",
-          "role": "Main private credit bureau (Schutzgemeinschaft für allgemeine Kreditsicherung).",
-          "url": "https://www.schufa.de"
-        },
-        {
-          "name": "Creditreform / SCHUFA partners",
-          "role": "Business and consumer reporting sits alongside SCHUFA in many contracts.",
-          "url": "https://www.creditreform.de"
-        }
-      ]
-    },
-    {
-      "id": "nl",
-      "iso": "NL",
-      "country": "Netherlands",
-      "region": "euro",
-      "system": "BKR",
-      "style": "comprehensive",
-      "styleLabel": "Comprehensive, mandatory",
-      "notes": "Registers most credit agreements.",
-      "bureaus": [
-        {
-          "name": "BKR (Stichting Bureau Krediet Registratie)",
-          "role": "National credit registration; lenders are generally required to report agreements.",
-          "url": "https://www.bkr.nl"
-        }
-      ]
-    },
-    {
-      "id": "fr",
-      "iso": "FR",
-      "country": "France",
-      "region": "euro",
-      "system": "FICP (Banque de France) + private",
-      "style": "negative",
-      "styleLabel": "Mostly negative",
-      "notes": "Focus on incidents/defaults.",
-      "bureaus": [
-        {
-          "name": "FICP — Banque de France",
-          "role": "Public file of credit incidents of individuals (Fichier national des Incidents de remboursement des Crédits aux Particuliers).",
-          "url": "https://www.banque-france.fr/en/financial-stability/credit-register"
-        },
-        {
-          "name": "Private bureaus",
-          "role": "Commercial files exist beside FICP; the public register remains incident-focused rather than a full positive score.",
-          "url": "https://www.banque-france.fr"
-        }
-      ]
-    },
-    {
-      "id": "es",
-      "iso": "ES",
-      "country": "Spain",
-      "region": "euro",
-      "system": "ASNEF, Experian",
-      "style": "negative",
-      "styleLabel": "Primarily negative",
-      "notes": "Defaults and delinquencies.",
-      "bureaus": [
-        {
-          "name": "ASNEF",
-          "role": "Asociación Nacional de Establecimientos Financieros de Crédito — commonly referenced negative file.",
-          "url": "https://www.asnef.com"
-        },
-        {
-          "name": "Experian Spain",
-          "role": "Private bureau used with ASNEF-style delinquency data.",
-          "url": "https://www.experian.es"
-        }
-      ]
-    },
-    {
-      "id": "it",
-      "iso": "IT",
-      "country": "Italy",
-      "region": "euro",
-      "system": "CRIF, CTC + central register",
-      "style": "comprehensive",
-      "styleLabel": "Comprehensive",
-      "notes": "Private + public elements.",
-      "bureaus": [
-        {
-          "name": "CRIF",
-          "role": "Largest private credit bureau; EURISC / similar consumer reports.",
-          "url": "https://www.crif.it"
-        },
-        {
-          "name": "CTC",
-          "role": "Consorzio per la Tutela del Credito — private consortium file.",
-          "url": "https://www.ctconline.it"
-        },
-        {
-          "name": "Central Credit Register (Banca d'Italia)",
-          "role": "Public Centrale dei Rischi for larger exposures; sits next to private bureaus.",
-          "url": "https://www.bancaditalia.it/statistiche/tematiche/rischi-centrali"
-        }
-      ]
-    },
-    {
-      "id": "uk",
-      "iso": "GB",
-      "country": "United Kingdom (non-euro)",
-      "region": "non-euro",
-      "system": "Experian, Equifax, TransUnion",
-      "style": "comprehensive",
-      "styleLabel": "Comprehensive",
-      "notes": "Multiple scores/scales.",
-      "bureaus": [
-        {
-          "name": "Experian",
-          "role": "One of three nationwide consumer bureaus; own score scale.",
-          "url": "https://www.experian.co.uk"
-        },
-        {
-          "name": "Equifax",
-          "role": "Nationwide file and score, not interchangeable with Experian’s number.",
-          "url": "https://www.equifax.co.uk"
-        },
-        {
-          "name": "TransUnion",
-          "role": "Third nationwide bureau (formerly Callcredit).",
-          "url": "https://www.transunion.co.uk"
-        }
-      ]
-    },
-    {
-      "id": "other",
-      "iso": "EU",
-      "country": "Others",
-      "region": "mixed",
-      "system": "Varies (e.g. UC in Sweden)",
-      "style": "mixed",
-      "styleLabel": "Mixed",
-      "notes": "GDPR provides common data-protection floor.",
-      "bureaus": [
-        {
-          "name": "UC (Sweden)",
-          "role": "Example of a Nordic comprehensive private bureau outside the euro area’s core set above.",
-          "url": "https://www.uc.se"
-        },
-        {
-          "name": "GDPR / EDPB",
-          "role": "Common rules on access, purpose limitation, and data-subject rights — not a single EU credit score.",
-          "url": "https://www.edpb.europa.eu"
-        }
-      ]
-    }
+    {"id":"at","iso":"AT","country":"Austria","private":"KSV1870, CRIF","public":"OeNB-related","style":"comprehensive","styleLabel":"Comprehensive","notes":"ACCIS members plus OeNB-related central aspects.","access":"Request your file from KSV1870 or CRIF (GDPR Art. 15). OeNB information is mainly for supervised lenders.","bureaus":[{"name":"KSV1870","kind":"private","url":"https://www.ksv.at","role":"ACCIS member; consumer and commercial reports."},{"name":"CRIF Austria","kind":"private","url":"https://www.crif.at","role":"ACCIS member."},{"name":"Oesterreichische Nationalbank","kind":"public","url":"https://www.oenb.at","role":"Central-bank related credit information."}]},
+    {"id":"be","iso":"BE","country":"Belgium","private":"—","public":"Banque Nationale de Belgique (Central Credit Register)","style":"comprehensive","styleLabel":"Public CCR","notes":"National Bank of Belgium runs the Central Credit Register.","access":"Ask the National Bank of Belgium Central Credit Register for your own record.","bureaus":[{"name":"Banque Nationale de Belgique — Central Credit Register","kind":"public","url":"https://www.nbb.be","role":"Public CCR for consumer and mortgage credit."}]},
+    {"id":"hr","iso":"HR","country":"Croatia","private":"HROK","public":"HNB","style":"comprehensive","styleLabel":"Mixed","notes":"HROK private bureau; Hrvatska narodna banka public side.","access":"HROK subject-access plus HNB channels for the public register.","bureaus":[{"name":"HROK","kind":"private","url":"https://www.hrok.hr","role":"Croatian credit bureau (ACCIS)."},{"name":"Hrvatska narodna banka","kind":"public","url":"https://www.hnb.hr","role":"Central bank / public register."}]},
+    {"id":"cz","iso":"CZ","country":"Czech Republic","private":"CRIF – Czech Credit Bureau, SOLUS","public":"CNB Central Credit Register","style":"comprehensive","styleLabel":"Comprehensive","notes":"Private CCB/SOLUS plus CNB CCR.","access":"CRIF CCB or SOLUS for private files; CNB for the central credit register.","bureaus":[{"name":"CRIF – Czech Credit Bureau","kind":"private","url":"https://www.crif.cz","role":"ACCIS member."},{"name":"SOLUS","kind":"private","url":"https://www.solus.cz","role":"Negative / debtor register."},{"name":"Czech National Bank CCR","kind":"public","url":"https://www.cnb.cz","role":"Central Credit Register."}]},
+    {"id":"dk","iso":"DK","country":"Denmark","private":"Experian Denmark","public":"—","style":"comprehensive","styleLabel":"Private","notes":"Experian Denmark is the main private bureau.","access":"GDPR access request to Experian Denmark.","bureaus":[{"name":"Experian Denmark","kind":"private","url":"https://www.experian.dk","role":"ACCIS-related private bureau."}]},
+    {"id":"ee","iso":"EE","country":"Estonia","private":"Creditinfo Eesti","public":"Eesti Pank","style":"comprehensive","styleLabel":"Mixed","notes":"Creditinfo Eesti plus Eesti Pank.","access":"Creditinfo Eesti subject access; Eesti Pank for central-bank registers.","bureaus":[{"name":"Creditinfo Eesti","kind":"private","url":"https://www.creditinfo.ee","role":"Private credit bureau."},{"name":"Eesti Pank","kind":"public","url":"https://www.eestipank.ee","role":"National central bank."}]},
+    {"id":"fi","iso":"FI","country":"Finland","private":"Suomen Asiakastieto","public":"—","style":"comprehensive","styleLabel":"Private","notes":"Asiakastieto is the main private file.","access":"Request your credit information from Suomen Asiakastieto.","bureaus":[{"name":"Suomen Asiakastieto","kind":"private","url":"https://www.asiakastieto.fi","role":"ACCIS member."}]},
+    {"id":"fr","iso":"FR","country":"France","private":"Experian (limited private)","public":"Banque de France (FICP negative + other)","style":"negative","styleLabel":"Mostly negative","notes":"FICP is incident-focused; private Experian is limited.","access":"Banque de France for FICP/FCC extracts; Experian France where a private file exists.","bureaus":[{"name":"Experian France","kind":"private","url":"https://www.experian.fr","role":"Limited private bureau."},{"name":"Banque de France — FICP","kind":"public","url":"https://www.banque-france.fr","role":"Public negative file of credit incidents."}]},
+    {"id":"de","iso":"DE","country":"Germany","private":"SCHUFA, CRIF, Creditreform, Experian/infoscore","public":"Deutsche Bundesbank (business-focused aspects)","style":"comprehensive","styleLabel":"Comprehensive","notes":"SCHUFA dominates consumer scores; Bundesbank is more business/supervisory.","access":"SCHUFA Datenkopie (Art. 15). CRIF, Creditreform Boniversum, and Infoscore/Experian also take access requests.","bureaus":[{"name":"SCHUFA","kind":"private","url":"https://www.schufa.de","role":"Main consumer bureau; ACCIS."},{"name":"CRIF Germany","kind":"private","url":"https://www.crif.de","role":"Private bureau."},{"name":"Creditreform / Boniversum","kind":"private","url":"https://www.creditreform.de","role":"Commercial and consumer reporting."},{"name":"Experian / Infoscore","kind":"private","url":"https://www.experian.de","role":"Private scoring / infoscore."},{"name":"Deutsche Bundesbank","kind":"public","url":"https://www.bundesbank.de","role":"Business-focused / supervisory credit aspects."}]},
+    {"id":"gr","iso":"GR","country":"Greece","private":"TIRESIAS","public":"Bank of Greece","style":"comprehensive","styleLabel":"Mixed","notes":"TIRESIAS private; Bank of Greece public.","access":"TIRESIAS (Teiresias) subject access; Bank of Greece for central data.","bureaus":[{"name":"TIRESIAS (Teiresias)","kind":"private","url":"https://www.teiresias.gr","role":"ACCIS member."},{"name":"Bank of Greece","kind":"public","url":"https://www.bankofgreece.gr","role":"Central bank."}]},
+    {"id":"hu","iso":"HU","country":"Hungary","private":"BISZ","public":"MNB","style":"comprehensive","styleLabel":"Mixed","notes":"BISZ KHR private/interbank; Magyar Nemzeti Bank public.","access":"BISZ (KHR) for the interbank file; MNB for the central bank.","bureaus":[{"name":"BISZ","kind":"private","url":"https://www.bisz.hu","role":"Central Credit Information System operator."},{"name":"Magyar Nemzeti Bank","kind":"public","url":"https://www.mnb.hu","role":"National central bank."}]},
+    {"id":"it","iso":"IT","country":"Italy","private":"CRIF, Experian/Cerved","public":"Banca d'Italia Centrale dei Rischi","style":"comprehensive","styleLabel":"Comprehensive","notes":"Private EURISC-style files plus the public Centrale dei Rischi.","access":"CRIF, Experian or Cerved for private files; Banca d'Italia for Centrale dei Rischi (larger exposures).","bureaus":[{"name":"CRIF","kind":"private","url":"https://www.crif.it","role":"Largest private bureau; ACCIS."},{"name":"Experian / Cerved","kind":"private","url":"https://www.experian.it","role":"Private bureau / Cerved group."},{"name":"Banca d'Italia — Centrale dei Rischi","kind":"public","url":"https://www.bancaditalia.it","role":"Public central credit register."}]},
+    {"id":"lv","iso":"LV","country":"Latvia","private":"Creditinfo","public":"Latvijas Banka","style":"comprehensive","styleLabel":"Mixed","notes":"Creditinfo plus the national central bank.","access":"Creditinfo Latvija Art. 15; Latvijas Banka for the public register.","bureaus":[{"name":"Creditinfo Latvia","kind":"private","url":"https://www.creditinfo.lv","role":"Private bureau."},{"name":"Latvijas Banka","kind":"public","url":"https://www.bank.lv","role":"National central bank."}]},
+    {"id":"lt","iso":"LT","country":"Lithuania","private":"Creditinfo","public":"Lietuvos bankas","style":"comprehensive","styleLabel":"Mixed","notes":"Creditinfo plus Lietuvos bankas.","access":"Creditinfo Lietuva; Lietuvos bankas for central-bank data.","bureaus":[{"name":"Creditinfo Lithuania","kind":"private","url":"https://www.creditinfo.lt","role":"Private bureau."},{"name":"Lietuvos bankas","kind":"public","url":"https://www.lb.lt","role":"National central bank."}]},
+    {"id":"mt","iso":"MT","country":"Malta","private":"Creditinfo","public":"Central Bank of Malta","style":"comprehensive","styleLabel":"Mixed","notes":"Creditinfo plus the Central Bank of Malta.","access":"Creditinfo Malta; Central Bank of Malta.","bureaus":[{"name":"Creditinfo Malta","kind":"private","url":"https://www.creditinfo.com.mt","role":"Private bureau."},{"name":"Central Bank of Malta","kind":"public","url":"https://www.centralbankmalta.org","role":"National central bank."}]},
+    {"id":"nl","iso":"NL","country":"Netherlands","private":"BKR, Experian","public":"—","style":"comprehensive","styleLabel":"Comprehensive, mandatory","notes":"BKR registers most credit agreements; Experian also present.","access":"BKR inzage (your own BKR report). Experian NL where a private file exists.","bureaus":[{"name":"BKR","kind":"private","url":"https://www.bkr.nl","role":"Mandatory credit registration; ACCIS."},{"name":"Experian Netherlands","kind":"private","url":"https://www.experian.nl","role":"Private bureau."}]},
+    {"id":"pl","iso":"PL","country":"Poland","private":"BIK (Biuro Informacji Kredytowej), CRIF","public":"NBP-related","style":"comprehensive","styleLabel":"Comprehensive","notes":"BIK is the main consumer file; CRIF and NBP-related public aspects.","access":"BIK report (raport BIK); CRIF Poland; NBP for central-bank related data.","bureaus":[{"name":"BIK","kind":"private","url":"https://www.bik.pl","role":"Main credit bureau; ACCIS."},{"name":"CRIF Poland","kind":"private","url":"https://www.crif.pl","role":"Private bureau."},{"name":"Narodowy Bank Polski","kind":"public","url":"https://www.nbp.pl","role":"NBP-related public register aspects."}]},
+    {"id":"pt","iso":"PT","country":"Portugal","private":"Equifax Iberica","public":"Banco de Portugal","style":"comprehensive","styleLabel":"Mixed","notes":"Equifax Iberica private; Banco de Portugal CRC.","access":"Banco de Portugal mapa de responsabilidades; Equifax Iberica for the private file.","bureaus":[{"name":"Equifax Iberica","kind":"private","url":"https://www.equifax.pt","role":"Private bureau."},{"name":"Banco de Portugal","kind":"public","url":"https://www.bportugal.pt","role":"Central credit register (CRC)."}]},
+    {"id":"ro","iso":"RO","country":"Romania","private":"Biroul de Credit","public":"BNR","style":"comprehensive","styleLabel":"Mixed","notes":"Biroul de Credit private; Banca Națională a României public.","access":"Biroul de Credit access request; BNR for the public side.","bureaus":[{"name":"Biroul de Credit","kind":"private","url":"https://www.birouldecredit.ro","role":"ACCIS member."},{"name":"Banca Națională a României","kind":"public","url":"https://www.bnr.ro","role":"National central bank."}]},
+    {"id":"sk","iso":"SK","country":"Slovakia","private":"CRIF – Slovak Credit Bureau","public":"NBS","style":"comprehensive","styleLabel":"Mixed","notes":"CRIF SCB plus Národná banka Slovenska.","access":"CRIF Slovak Credit Bureau; NBS for the public register.","bureaus":[{"name":"CRIF – Slovak Credit Bureau","kind":"private","url":"https://www.crif.sk","role":"ACCIS member."},{"name":"Národná banka Slovenska","kind":"public","url":"https://www.nbs.sk","role":"National central bank."}]},
+    {"id":"si","iso":"SI","country":"Slovenia","private":"SISBON","public":"AJPES / Bank of Slovenia","style":"comprehensive","styleLabel":"Mixed","notes":"SISBON system; AJPES and Banka Slovenije public.","access":"SISBON access via participating banks; AJPES / Bank of Slovenia for public registers.","bureaus":[{"name":"SISBON","kind":"private","url":"https://www.sisbon.si","role":"Exchange of information on bank clients."},{"name":"AJPES","kind":"public","url":"https://www.ajpes.si","role":"Public records / business register."},{"name":"Banka Slovenije","kind":"public","url":"https://www.bsi.si","role":"National central bank."}]},
+    {"id":"es","iso":"ES","country":"Spain","private":"Equifax (ASNEF), Experian","public":"Banco de España Central de Información de Riesgos","style":"negative","styleLabel":"Primarily negative (private)","notes":"ASNEF/Experian concentrate on delinquencies; CIR is the public CCR.","access":"Equifax ASNEF and Experian Spain for private files; Banco de España CIR for the public register.","bureaus":[{"name":"Equifax (ASNEF)","kind":"private","url":"https://www.equifax.es","role":"ASNEF negative file."},{"name":"Experian Spain","kind":"private","url":"https://www.experian.es","role":"Private bureau."},{"name":"Banco de España — CIR","kind":"public","url":"https://www.bde.es","role":"Central Credit Register (CIR)."}]},
+    {"id":"se","iso":"SE","country":"Sweden","private":"UC, Creditsafe","public":"—","style":"comprehensive","styleLabel":"Private","notes":"UC and Creditsafe; no single public CCR of the euro-area type.","access":"UC and Creditsafe GDPR access.","bureaus":[{"name":"UC","kind":"private","url":"https://www.uc.se","role":"Main private bureau; ACCIS."},{"name":"Creditsafe","kind":"private","url":"https://www.creditsafe.com/se","role":"Private bureau / business information."}]},
+    {"id":"gb","iso":"GB","country":"United Kingdom (non-EU)","private":"Experian, Equifax, TransUnion","public":"—","style":"comprehensive","styleLabel":"Comprehensive","notes":"Three nationwide CRAs; not an EU ACCIS map row, kept for comparison.","access":"Statutory credit file from Experian, Equifax and TransUnion UK.","bureaus":[{"name":"Experian UK","kind":"private","url":"https://www.experian.co.uk","role":"Nationwide CRA."},{"name":"Equifax UK","kind":"private","url":"https://www.equifax.co.uk","role":"Nationwide CRA."},{"name":"TransUnion UK","kind":"private","url":"https://www.transunion.co.uk","role":"Nationwide CRA."}]}
   ]
 }

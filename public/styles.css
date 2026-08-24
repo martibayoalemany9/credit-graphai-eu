@@ -78,6 +78,25 @@ article.card:hover, article.card:focus-within { z-index: 40; }
 .flag-it { background: linear-gradient(90deg, #009246 33%, #fff 33% 66%, #ce2b37 66%); color: #009246; }
 .flag-uk { background: linear-gradient(135deg, #012169, #c8102e 55%, #012169); }
 .flag-other { background: linear-gradient(135deg, #0c2226, #2a6f7a); }
+.flag-at { background: linear-gradient(#ed2939 33%, #fff 33% 66%, #ed2939 66%); color: #ed2939; }
+.flag-be { background: linear-gradient(90deg, #000 33%, #fae042 33% 66%, #ed2939 66%); }
+.flag-hr { background: linear-gradient(#ff0000 33%, #fff 33% 66%, #171796 66%); }
+.flag-cz { background: linear-gradient(135deg, #11457e, #fff 40%, #d7141a); }
+.flag-dk { background: #c60c30; }
+.flag-ee { background: linear-gradient(#0072ce 33%, #000 33% 66%, #fff 66%); }
+.flag-fi { background: #fff; color: #002f6c; }
+.flag-gr { background: repeating-linear-gradient(#0d5eaf, #0d5eaf 12%, #fff 12%, #fff 24%); }
+.flag-hu { background: linear-gradient(#ce2939 33%, #fff 33% 66%, #477050 66%); }
+.flag-lv { background: linear-gradient(#9e3039 40%, #fff 40% 60%, #9e3039 60%); }
+.flag-lt { background: linear-gradient(#fdb913 33%, #006a44 33% 66%, #c1272d 66%); color: #006a44; }
+.flag-mt { background: linear-gradient(90deg, #fff 50%, #cf142b 50%); color: #cf142b; }
+.flag-pl { background: linear-gradient(#fff 50%, #dc143c 50%); color: #dc143c; }
+.flag-pt { background: linear-gradient(90deg, #006600 40%, #ff0000 40%); }
+.flag-ro { background: linear-gradient(90deg, #002b7f 33%, #fcd116 33% 66%, #ce1126 66%); }
+.flag-sk { background: linear-gradient(#fff 33%, #0b4ea2 33% 66%, #ee1c25 66%); color: #0b4ea2; }
+.flag-si { background: linear-gradient(#fff 33%, #005ce6 33% 66%, #ed1c24 66%); color: #005ce6; }
+.flag-se { background: #006aa7; }
+.flag-gb { background: linear-gradient(135deg, #012169, #c8102e 55%, #012169); }
 .cap { padding: 10px 12px 12px; font-size: 13px; }
 .cap strong { display: block; font-size: 14px; margin-bottom: 4px; }
 .cap a { color: var(--primary); }

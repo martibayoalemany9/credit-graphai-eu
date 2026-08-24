@@ -1,4 +1,4 @@
-const CSV_FIELDS = ["country", "iso", "system", "style", "notes", "bureaus", "urls"]
+const CSV_FIELDS = ["country", "iso", "private", "public", "style", "notes", "access", "bureaus", "urls"]
 let catalog = { countries: [], gdpr: "" }
 let view = "gallery"
 let openRows = new Set()
@@ -16,7 +16,7 @@ function filtered() {
     if (cat && co.style !== cat) return false
     if (!needle) return true
     const blob = [
-      co.country, co.iso, co.system, co.styleLabel, co.notes,
+      co.country, co.iso, co.private, co.public, co.system, co.styleLabel, co.notes, co.access,
       ...(co.bureaus || []).map((b) => [b.name, b.role, b.url].join(" ")),
     ].join(" ").toLowerCase()
     return blob.includes(needle)
@@ -40,7 +40,8 @@ function card(co) {
     <div class="flag flag-${esc(co.id)}" aria-hidden="true"><span>${esc(co.iso)}</span></div>
     <div class="cap">
       <strong>${esc(co.country)}</strong>
-      <div class="badge on">${esc(co.system)}</div>
+      <div class="badge on">${esc(co.private || co.system || "—")}</div>
+      <p class="muted"><b>Public:</b> ${esc(co.public || "—")}</p>
       <div class="auto-bubbles">${styleBubble(co)}</div>
       <p class="muted">${esc(co.notes)}</p>
       <ul class="bureau-list">${(co.bureaus || []).map((b) =>
@@ -63,11 +64,12 @@ function nestedHtml(co) {
 
 function tableRow(co, i) {
   const open = openRows.has(i)
-  const nested = open ? `<tr class="nested" data-for="${i}"><td colspan="4">${nestedHtml(co)}</td></tr>` : ""
+  const nested = open ? `<tr class="nested" data-for="${i}"><td colspan="5">${nestedHtml(co)}</td></tr>` : ""
   return `<tr class="co ${open ? "open" : ""}" data-i="${i}">
     <td><button type="button" class="exp" data-exp="${i}" aria-expanded="${open}">${open ? "▾" : "▸"}</button> <strong>${esc(co.country)}</strong>
       <div class="muted">${esc(co.iso)}</div></td>
-    <td>${esc(co.system)}</td>
+    <td>${esc(co.private || "—")}</td>
+    <td>${esc(co.public || "—")}</td>
     <td class="auto-cell">${styleBubble(co)}</td>
     <td>${esc(co.notes)}</td>
   </tr>${nested}`
@@ -89,7 +91,7 @@ function toggleExpand(root, i) {
   const co = catalog.countries[i]
   if (!co) return
   existing?.remove()
-  tr.insertAdjacentHTML("afterend", `<tr class="nested" data-for="${i}"><td colspan="4">${nestedHtml(co)}</td></tr>`)
+  tr.insertAdjacentHTML("afterend", `<tr class="nested" data-for="${i}"><td colspan="5">${nestedHtml(co)}</td></tr>`)
   tr.classList.add("open")
   if (btn) { btn.textContent = "▾"; btn.setAttribute("aria-expanded", "true") }
 }
@@ -163,7 +165,7 @@ function render() {
     grid.classList.add("is-hidden")
     tableWrap.classList.remove("is-hidden")
     tableWrap.innerHTML = `<div class="table-scroller"><table class="studio">
-      <thead><tr><th>Country</th><th>Main system / bureau</th><th>Style</th><th>Notes</th></tr></thead>
+      <thead><tr><th>Country</th><th>Main private bureau(s) / ACCIS members</th><th>Public / central register</th><th>Style</th><th>Notes</th></tr></thead>
       <tbody>${rows.map((co) => tableRow(co, catalog.countries.indexOf(co))).join("")}</tbody>
     </table></div>`
     bindTable(tableWrap)
@@ -180,9 +182,11 @@ function downloadCsv() {
     const rec = {
       country: co.country,
       iso: co.iso,
-      system: co.system,
+      private: co.private || "",
+      public: co.public || "",
       style: co.styleLabel,
       notes: co.notes,
+      access: co.access || "",
       bureaus: (co.bureaus || []).map((b) => b.name).join("|"),
       urls: (co.bureaus || []).map((b) => b.url).join("|"),
     }
@@ -191,7 +195,7 @@ function downloadCsv() {
   const blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" })
   const a = document.createElement("a")
   a.href = URL.createObjectURL(blob)
-  a.download = "finance-rating-graphai-countries.csv"
+  a.download = "credit-ratings-graphai-countries.csv"
   a.click()
   URL.revokeObjectURL(a.href)
 }
