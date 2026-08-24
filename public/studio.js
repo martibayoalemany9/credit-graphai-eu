@@ -191,7 +191,7 @@ function downloadCsv() {
   const blob = new Blob([lines.join("\n") + "\n"], { type: "text/csv;charset=utf-8" })
   const a = document.createElement("a")
   a.href = URL.createObjectURL(blob)
-  a.download = "credit-graphai-countries.csv"
+  a.download = "finance-rating-graphai-countries.csv"
   a.click()
   URL.revokeObjectURL(a.href)
 }
