@@ -1,0 +1,165 @@
+{
+  "title": "European consumer credit registers",
+  "gdpr": "GDPR is the common data-protection floor across the EEA. It does not unify scores or bureau models. Each country still runs its own positive, negative, or mixed register.",
+  "countries": [
+    {
+      "id": "de",
+      "iso": "DE",
+      "country": "Germany",
+      "region": "euro",
+      "system": "SCHUFA",
+      "style": "comprehensive",
+      "styleLabel": "Comprehensive",
+      "notes": "Widely used; score important for rentals, contracts.",
+      "bureaus": [
+        {
+          "name": "SCHUFA",
+          "role": "Main private credit bureau (Schutzgemeinschaft für allgemeine Kreditsicherung).",
+          "url": "https://www.schufa.de"
+        },
+        {
+          "name": "Creditreform / SCHUFA partners",
+          "role": "Business and consumer reporting sits alongside SCHUFA in many contracts.",
+          "url": "https://www.creditreform.de"
+        }
+      ]
+    },
+    {
+      "id": "nl",
+      "iso": "NL",
+      "country": "Netherlands",
+      "region": "euro",
+      "system": "BKR",
+      "style": "comprehensive",
+      "styleLabel": "Comprehensive, mandatory",
+      "notes": "Registers most credit agreements.",
+      "bureaus": [
+        {
+          "name": "BKR (Stichting Bureau Krediet Registratie)",
+          "role": "National credit registration; lenders are generally required to report agreements.",
+          "url": "https://www.bkr.nl"
+        }
+      ]
+    },
+    {
+      "id": "fr",
+      "iso": "FR",
+      "country": "France",
+      "region": "euro",
+      "system": "FICP (Banque de France) + private",
+      "style": "negative",
+      "styleLabel": "Mostly negative",
+      "notes": "Focus on incidents/defaults.",
+      "bureaus": [
+        {
+          "name": "FICP — Banque de France",
+          "role": "Public file of credit incidents of individuals (Fichier national des Incidents de remboursement des Crédits aux Particuliers).",
+          "url": "https://www.banque-france.fr/en/financial-stability/credit-register"
+        },
+        {
+          "name": "Private bureaus",
+          "role": "Commercial files exist beside FICP; the public register remains incident-focused rather than a full positive score.",
+          "url": "https://www.banque-france.fr"
+        }
+      ]
+    },
+    {
+      "id": "es",
+      "iso": "ES",
+      "country": "Spain",
+      "region": "euro",
+      "system": "ASNEF, Experian",
+      "style": "negative",
+      "styleLabel": "Primarily negative",
+      "notes": "Defaults and delinquencies.",
+      "bureaus": [
+        {
+          "name": "ASNEF",
+          "role": "Asociación Nacional de Establecimientos Financieros de Crédito — commonly referenced negative file.",
+          "url": "https://www.asnef.com"
+        },
+        {
+          "name": "Experian Spain",
+          "role": "Private bureau used with ASNEF-style delinquency data.",
+          "url": "https://www.experian.es"
+        }
+      ]
+    },
+    {
+      "id": "it",
+      "iso": "IT",
+      "country": "Italy",
+      "region": "euro",
+      "system": "CRIF, CTC + central register",
+      "style": "comprehensive",
+      "styleLabel": "Comprehensive",
+      "notes": "Private + public elements.",
+      "bureaus": [
+        {
+          "name": "CRIF",
+          "role": "Largest private credit bureau; EURISC / similar consumer reports.",
+          "url": "https://www.crif.it"
+        },
+        {
+          "name": "CTC",
+          "role": "Consorzio per la Tutela del Credito — private consortium file.",
+          "url": "https://www.ctconline.it"
+        },
+        {
+          "name": "Central Credit Register (Banca d'Italia)",
+          "role": "Public Centrale dei Rischi for larger exposures; sits next to private bureaus.",
+          "url": "https://www.bancaditalia.it/statistiche/tematiche/rischi-centrali"
+        }
+      ]
+    },
+    {
+      "id": "uk",
+      "iso": "GB",
+      "country": "United Kingdom (non-euro)",
+      "region": "non-euro",
+      "system": "Experian, Equifax, TransUnion",
+      "style": "comprehensive",
+      "styleLabel": "Comprehensive",
+      "notes": "Multiple scores/scales.",
+      "bureaus": [
+        {
+          "name": "Experian",
+          "role": "One of three nationwide consumer bureaus; own score scale.",
+          "url": "https://www.experian.co.uk"
+        },
+        {
+          "name": "Equifax",
+          "role": "Nationwide file and score, not interchangeable with Experian’s number.",
+          "url": "https://www.equifax.co.uk"
+        },
+        {
+          "name": "TransUnion",
+          "role": "Third nationwide bureau (formerly Callcredit).",
+          "url": "https://www.transunion.co.uk"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "iso": "EU",
+      "country": "Others",
+      "region": "mixed",
+      "system": "Varies (e.g. UC in Sweden)",
+      "style": "mixed",
+      "styleLabel": "Mixed",
+      "notes": "GDPR provides common data-protection floor.",
+      "bureaus": [
+        {
+          "name": "UC (Sweden)",
+          "role": "Example of a Nordic comprehensive private bureau outside the euro area’s core set above.",
+          "url": "https://www.uc.se"
+        },
+        {
+          "name": "GDPR / EDPB",
+          "role": "Common rules on access, purpose limitation, and data-subject rights — not a single EU credit score.",
+          "url": "https://www.edpb.europa.eu"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graphai — European credit ratings</title>
+  <meta name="description" content="Country-by-country consumer credit registers and bureaus: SCHUFA, BKR, FICP, ASNEF, CRIF, UK CRA trio, and GDPR as the common floor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/cookies.css">
+</head>
+<body class="landing-body mode-gallery">
+  <header class="app-header">
+    <a class="brand" href="https://graphai.eu" aria-label="Graphai home">
+      <svg class="mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <path d="M16 2.5 27.5 9v14L16 29.5 4.5 23V9L16 2.5Z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round" opacity="0.5"/>
+        <path d="M10.5 21 16 12l6 6M16 12v-3.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="16" cy="8" r="2" fill="currentColor"/>
+        <circle cx="10.5" cy="21.5" r="2" fill="currentColor"/>
+        <circle cx="22" cy="18.5" r="2" fill="currentColor"/>
+        <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+      </svg>
+      <div>
+        <div class="wordmark">GRAPHAI</div>
+        <p>Credit ratings · credit.graphai.eu</p>
+      </div>
+    </a>
+    <div class="auth-slot">
+      <a class="auth-btn" href="https://jobs.graphai.eu">Jobs studio</a>
+      <a class="auth-btn outline" href="https://graphai.eu">graphai.eu</a>
+    </div>
+  </header>
+  <main class="landing">
+    <p class="kicker">credit.graphai.eu</p>
+    <h1>Country credit systems, spoken as a studio.</h1>
+    <p class="lede">Complex money and mobility data, spoken clearly — here, who keeps the file when a household borrows.</p>
+    <p class="meta">Inspired by the jobs.graphai.eu gallery and table. Public reference only: not a score, not advice, not a substitute for a data-subject access request at the bureau.</p>
+    <div class="landing-cta">
+      <a class="action primary" href="#studio">Open the country studio</a>
+      <a class="action" href="https://jobs.graphai.eu">Jobs.graphai.eu</a>
+    </div>
+    <section class="grid-intro">
+      <article>
+        <h2>Comprehensive</h2>
+        <p>Positive and negative agreements on file — Germany SCHUFA, Dutch BKR, Italy’s private + public mix, UK CRA trio.</p>
+      </article>
+      <article>
+        <h2>Mostly negative</h2>
+        <p>France FICP and Spain ASNEF / Experian concentrate on incidents, defaults, and delinquencies.</p>
+      </article>
+      <article>
+        <h2>GDPR floor</h2>
+        <p>One data-protection law, many registers. Scores and scales are national; access rights are European.</p>
+      </article>
+    </section>
+  </main>
+
+  <div class="studio-head" id="studio">
+    <p class="kicker">Studio</p>
+    <h1>Main system / bureau</h1>
+    <p class="meta" id="count">Loading…</p>
+    <p class="meta" id="gdprLine"></p>
+    <div class="toolbar">
+      <input id="q" type="search" placeholder="Search country, bureau, or note"/>
+      <select id="st">
+        <option value="">All styles</option>
+        <option value="comprehensive">Comprehensive</option>
+        <option value="negative">Mostly / primarily negative</option>
+        <option value="mixed">Mixed</option>
+      </select>
+      <div class="view-toggle" role="group" aria-label="View">
+        <button type="button" class="on" id="viewGallery">Gallery</button>
+        <button type="button" id="viewTable">Table</button>
+      </div>
+      <button type="button" class="action" id="dlTable">Export CSV</button>
+    </div>
+  </div>
+  <div id="grid" class="grid"></div>
+  <div id="tableWrap" class="table-wrap is-hidden"></div>
+  <div id="policyToast" class="policy-toast" hidden></div>
+
+  <footer class="site-footer">
+    <div><strong>GRAPHAI</strong> · Graphai OÜ · Tallinn</div>
+    <div>
+      <a href="https://graphai.eu">graphai.eu</a> ·
+      <a href="https://graphai.eu/imprint">Imprint</a> ·
+      <a href="https://jobs.graphai.eu">jobs</a>
+    </div>
+  </footer>
+  <script src="/studio.js"></script>
+  <script src="/cookies.js"></script>
+</body>
+</html>
