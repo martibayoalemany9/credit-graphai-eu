@@ -1,0 +1,22 @@
+name: public-host-e2e
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+jobs:
+  playwright:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm install --no-save @playwright/test@1.55.0
+          npx playwright install --with-deps chromium
+      - name: Run public-host tests (fail while bug is open)
+        run: npx playwright test --config=playwright.config.ts
